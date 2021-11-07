@@ -10,7 +10,7 @@ namespace Lab3_1.Controllers
             return View();
         }
 
-        //tutaj jest problem
+
         public IActionResult Add(ProductModel product)
         {
             var viewModel = new ProductStatsViewModel

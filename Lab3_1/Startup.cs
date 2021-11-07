@@ -1,3 +1,4 @@
+using Lab3_1.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,9 @@ namespace Lab3_1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<AppDbContext>(
+            config => config.UseSqlServer(Configuration.GetConnectionString("Application")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
